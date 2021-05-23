@@ -5,19 +5,49 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5000;
 
-app.use(express.static('server/public'));
+app.use(express.static('/Users/stephenpiper/Documents/Prime/tier_2/weekend-jquery-server-calculator/weekend-jquery-server-calculator/server'));
 app.use(bodyParser.urlencoded({extended : true}))
 
 
 
+let holdingTank = [];
+
+
+
+function getAnswer() {
+    console.log('in get answer');
+
+
+    answer = (holdingTank.numOne, holdingTank.math, holdingTank.numTwo)
+
+    console.log(answer);
+    
+    
+}
 
 
 
 
 
 
+app.post('/calculate', (req,res)=>{
+
+    console.log(req.body);
+    holdingTank.push(req.body);
+    
+    res.sendStatus(200);
+});
 
 
+app.get('/calculate', (req, res) => {
+    console.log('got to /calculate');
+
+    res.send(holdingTank)
+})
+
+
+
+getAnswer();
 
 
 
