@@ -7,6 +7,7 @@
         <title>Weekend Server Calculator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./vendor/bootstrap.css">
         <link rel="stylesheet" href="./styles/style.css">
         <script src="./vendor/jquery-3.6.0.min.js"></script>
         <script src="./scripts/client.js"></script>
@@ -14,27 +15,27 @@
     </head>
     <body>
         <h1>Weekend Server Calculator</h1>
-        <form id="calculator">
+        <form id="calculator" class="buttons">
             <input id="firstNumberIn" placeholder="number" type="number"></input> 
-            <button id="add" type="button">+</button>
-            <button id="subtract" type="button">-</button>
-            <button id="multiply" type="button">*</button>
-            <button id="divide" type="button">/</button>
-            <input id="secondNumberIn" placeholder="number" type="number"></input>
-            <button id="equals" type="button">=</button>
-            <button id="clear" type="button">c</button>
+            <button id="add" type="button" class="btn btn-outline-info">+</button>
+            <button id="subtract" type="button" class="btn btn-outline-info">-</button>
+            <button id="multiply" type="button" class="btn btn-outline-info">*</button>
+            <button id="divide" type="button" class="btn btn-outline-info">/</button>
+            <input id="secondNumberIn" placeholder="number" type="number" ></input>
+            <button id="equals" type="button" class="btn btn-outline-info">=</button>
+            <button id="clear" type="button" class="btn btn-outline-info">c</button>
 
         </form>
 
         <section>
-            <h3>Answer</h3>
-            <div = id="answer"></div>
+            <h4>Answer</h3>
+            <div = id="answer" class="answer"></div>
 
         </section>
 
         <container>
-            <h3>History</h3>
-            <div id="history"></div>
+            <h4>History</h3>
+            <div id="history" class="history"></div>
         </container>
         
         

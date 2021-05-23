@@ -57,6 +57,7 @@ function multiplyIt (){
     console.log(operator);
 
 }
+//functions to grab what the user clicked.  Probably could be a whole lot drier
 
 function equalIt() {
     let newOperation ={
@@ -70,14 +71,15 @@ function equalIt() {
     $.ajax({
         url: '/calculate',
         method: 'POST',
-        data: newOperation // becomes req.body on the server
+        data: newOperation 
     }).then(response => {
         console.log(response);
-        //possible  future function to clear inputs
+        // grabs the operator/inputs and shoots to server
         
     })
 
     getHistory();
+    //kicks off history function
 
     
 }
@@ -87,7 +89,7 @@ function getHistory(){
         method: 'GET',
         url: '/calculate'
     }).then(function (response) {
-        //respnse is what was in the res.send()
+
         console.log(response);
         //empty DOM
         $('#answer').empty();
@@ -97,9 +99,6 @@ function getHistory(){
         $('#history').empty();
         //append quotes to DOM
         for (let number of response) {
-            // $('#history').append(`
-            // <li>${number.numOne} ${number.math} ${number.numTwo}</li>
-            // `)
 
             if (number.math === 'add') {
                 $('#history').append(`
@@ -119,6 +118,6 @@ function getHistory(){
             }
         }
 
-    }) 
+    }) //gets the holdingTank array and appends the DOM based on the operator
 
 }

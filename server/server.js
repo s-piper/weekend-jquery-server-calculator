@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 
 
 let holdingTank = [];
-
+//where the objects live
 
 let answer = '';
 
@@ -33,7 +33,7 @@ function getAnswer() {
     } return holdingTank[0].result = answer;
     
     
-}
+}//converts the operator sting into something useable and then adds the answer to the object
 
 
 
@@ -45,7 +45,8 @@ app.post('/calculate', (req,res)=>{
 
     console.log(req.body);
     holdingTank.unshift(req.body);
-    
+    //puts the new object at the front of the array
+    //thats key for anything else to work
     res.sendStatus(200);
 
     getAnswer();
@@ -58,7 +59,7 @@ app.get('/calculate', (req, res) => {
     console.log('got to /calculate');
 
     res.send(holdingTank)
-})
+})//sends the array back
 
 
 
