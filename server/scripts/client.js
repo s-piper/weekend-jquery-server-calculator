@@ -23,7 +23,7 @@ let operator = '';
 function addIt() {
     console.log('add click');
     
-    operator = '+';
+    operator = 'add';
     console.log(operator);
     
 }
@@ -31,7 +31,7 @@ function addIt() {
 function subtractIt() {
     console.log('subtract click');
     
-    operator = '-';
+    operator = 'subtract';
     console.log(operator);
 
 }
@@ -39,7 +39,7 @@ function subtractIt() {
 function divideIt() {
     console.log('divide click');
     
-    operator = '/'
+    operator = 'divide'
     console.log(operator);
 
 }
@@ -47,7 +47,7 @@ function divideIt() {
 function multiplyIt (){ 
     console.log('multiply click');
     
-    operator = '*'
+    operator = 'multiply'
     console.log(operator);
 
 }

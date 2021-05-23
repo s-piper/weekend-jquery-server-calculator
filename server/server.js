@@ -17,8 +17,12 @@ let holdingTank = [];
 function getAnswer() {
     console.log('in get answer');
 
+    let answer = '';
 
-    answer = (holdingTank.numOne, holdingTank.math, holdingTank.numTwo)
+    if (math === 'add') {
+        answer = parseInt(numOne) + parseInt(numTwo)    
+    }
+    
 
     console.log(answer);
     
