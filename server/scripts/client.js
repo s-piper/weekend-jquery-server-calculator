@@ -81,12 +81,33 @@ function getHistory(){
         //respnse is what was in the res.send()
         console.log(response);
         //empty DOM
+        $('#answer').empty();
+        $('#answer').append(`
+            <li>${response[0].result}</li>`);
+
         $('#history').empty();
         //append quotes to DOM
         for (let number of response) {
-            $('#history').append(`
-            <li>${number.numOne} ${number.math} ${number.numTwo}</li>
-            `)
+            // $('#history').append(`
+            // <li>${number.numOne} ${number.math} ${number.numTwo}</li>
+            // `)
+
+            if (number.math === 'add') {
+                $('#history').append(`
+                <li>${number.numOne} + ${number.numTwo} = ${number.result}</li>`)
+            } else if (number.math === 'subtract') {
+                $('#history').append(`
+                <li>${number.numOne} - ${number.numTwo} = ${number.result}</li>`)
+
+            } else if (number.math === 'multiply') {
+                $('#history').append(`
+                <li>${number.numOne} * ${number.numTwo} = ${number.result}</li>`)
+
+            } else if (number.math === 'divide') {
+                $('#history').append(`
+                <li>${number.numOne} / ${number.numTwo} = ${number.result}</li>`)
+
+            }
         }
 
     })

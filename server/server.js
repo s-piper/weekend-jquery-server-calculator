@@ -20,9 +20,17 @@ function getAnswer() {
 
     if (holdingTank[0].math == 'add') {
         console.log('in add');
-        
-        answer = parseInt(holdingTank[0].numOne) + parseInt(holdingTank[0].numTwo);   
-    } return answer;
+        answer = parseInt(holdingTank[0].numOne) + parseInt(holdingTank[0].numTwo);  
+    } else if (holdingTank[0].math == 'subtract') {
+        console.log('in subtract');
+        answer = parseInt(holdingTank[0].numOne) - parseInt(holdingTank[0].numTwo);  
+    } else if (holdingTank[0].math == 'divide') {
+        console.log('in divide');
+        answer = parseInt(holdingTank[0].numOne) / parseInt(holdingTank[0].numTwo);  
+    } else if (holdingTank[0].math == 'multiply') {
+        console.log('in multiply');
+        answer = parseInt(holdingTank[0].numOne) * parseInt(holdingTank[0].numTwo); 
+    } return holdingTank[0].result = answer;
     
     
 }
