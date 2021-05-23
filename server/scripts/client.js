@@ -11,14 +11,20 @@ function handleReady() {
     $('#multiply').on('click', multiplyIt);
     $('#divide').on('click', divideIt);
     $('#equals').on('click', equalIt);
-    // $('#clear').on('click', clearIt);
+    $('#clear').on('click', clearIt);
 
-    getHistory();
 
 }
 
 
 let operator = '';
+
+
+function clearIt() {
+    $('#firstNumberIn').val('');
+    $(`#secondNumberIn`).val('');
+    
+}
 
 function addIt() {
     console.log('add click');
@@ -70,6 +76,9 @@ function equalIt() {
         //possible  future function to clear inputs
         
     })
+
+    getHistory();
+
     
 }
 
@@ -110,5 +119,6 @@ function getHistory(){
             }
         }
 
-    })
+    }) 
+
 }
