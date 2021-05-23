@@ -13,18 +13,16 @@ app.use(bodyParser.urlencoded({extended : true}))
 let holdingTank = [];
 
 
+let answer = '';
 
 function getAnswer() {
     console.log('in get answer');
 
-    let answer = '';
-
-    if (math === 'add') {
-        answer = parseInt(numOne) + parseInt(numTwo)    
-    }
-    
-
-    console.log(answer);
+    if (holdingTank[0].math == 'add') {
+        console.log('in add');
+        
+        answer = parseInt(holdingTank[0].numOne) + parseInt(holdingTank[0].numTwo);   
+    } return answer;
     
     
 }
@@ -34,12 +32,17 @@ function getAnswer() {
 
 
 
+
 app.post('/calculate', (req,res)=>{
 
     console.log(req.body);
-    holdingTank.push(req.body);
+    holdingTank.unshift(req.body);
     
     res.sendStatus(200);
+
+    getAnswer();
+    console.log(answer);
+
 });
 
 
@@ -51,7 +54,7 @@ app.get('/calculate', (req, res) => {
 
 
 
-getAnswer();
+
 
 
 
